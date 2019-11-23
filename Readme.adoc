@@ -1,0 +1,28 @@
+= Golfplatz-Administration
+:imagesdir: ./img
+:source-highlighter: coderay
+:toc:
+Leon Kuchinka <l.kuchinka@gmail.com>
+
+=== Übersicht
+Das Projekt dient der Verwaltung eines Golfplatzes. Gespeichert werden alle Golfer, die entweder Mitglied eines Teams (TeamPlayer) oder Hobbyspieler sind. Teammitglieder oder Hobbyspieler mit Premium-Mitgliedschaft (isPremiumMember) haben clubintern einige Vorteile. Alle müssen Startzeiten (TeeTime) buchen um auf dem 18-Loch-Kurs spielen gehen zu können.
+
+=== CLD
+image::CLD.png[CLD]
+
+=== ERD
+image::erd.png[ERD]
+
+=== Starten des Projekts
+
+PostgreSQL in Docker::
+[source, shell]
+----
+docker run -p 5432:5432 -e POSTGRES_PASSWORD=passme -d postgres
+----
+
+Quarkus-App in Dev-Mode::
+[source, shell]
+----
+./mvnw compile quarkus:dev
+----
